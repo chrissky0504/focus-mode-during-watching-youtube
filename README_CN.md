@@ -1,6 +1,6 @@
-# YouTube 專注模式 Edge 擴充套件
+# YouTube 專注模式 Edge/Chrome 擴充套件
 
-這是一個協助用戶專注觀看 YouTube 影片的系統，結合 Edge 瀏覽器擴充套件與本地 Python 程式。
+這是一個協助用戶專注觀看 YouTube 影片的系統，結合 Edge 瀏覽器擴充套件與本地 Python 程式，當啟動專注模式以後不論你是在視窗模式或是全螢幕模式都無法去點擊任何會讓你分心的頁面直到影片播放完畢。
 
 ## Language / 語言
 - [中文版 README](README_CN.md) (目前)
@@ -24,6 +24,7 @@
 - Windows 10/11
 - Python 3.7+
 - Microsoft Edge 瀏覽器
+- Chroome 瀏覽器
 - 網路連線（安裝依賴時）
 
 ## 快速安裝
@@ -39,11 +40,11 @@ cd focus-mode-during-watching-youtube
 pip install websockets pywin32
 ```
 
-### 3. 安裝 Edge 擴充套件
-1. 開啟 Edge 瀏覽器
-2. 前往 `edge://extensions/`
+### 3. 安裝 Edge/Chrome 擴充套件
+1. 開啟 Edge/Chrome 瀏覽器
+2. 前往 `edge://extensions/`、`Chrome://extensions/`
 3. 開啟「開發人員模式」
-4. 點擊「載入解壓縮」
+4. 點擊「載入解壓縮」/「載入未封裝項目」
 5. 選擇此專案的 `focus` 資料夾
 
 ## 使用方式

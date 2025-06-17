@@ -2,9 +2,9 @@
 - [中文版 README](README_CN.md)
 - [English README](README.md) (Current)
 
-# YouTube Focus Mode Edge Extension
+# YouTube Focus Mode Edge/Chrome Extension
 
-This is a system that helps users focus on watching YouTube videos, combining an Edge browser extension with a local Python program.
+This is a system that helps users focus on watching YouTube videos, combining an Edge browser extension with a local Python program.Once focus mode is activated, you won’t be able to click on anything distracting—whether you're in windowed or fullscreen mode—until the video finishes playing.
 
 ## System Components
 
@@ -24,6 +24,7 @@ This is a system that helps users focus on watching YouTube videos, combining an
 - Windows 10/11
 - Python 3.7+
 - Microsoft Edge browser
+- Chrome browser
 - Internet connection (for dependency installation)
 
 
@@ -40,9 +41,9 @@ cd focus-mode-during-watching-youtube
 pip install websockets pywin32
 ```
 
-### 3. Install Edge Extension
-1. Open Edge browser
-2. Go to `edge://extensions/`
+### 3. Install Edge/Chrome Extension
+1. Open Edge/Chrome browser
+2. Go to `edge://extensions/`,`Chrome://extensions/`
 3. Enable "Developer mode"
 4. Click "Load unpacked"
 5. Select the `focus` folder of this project
