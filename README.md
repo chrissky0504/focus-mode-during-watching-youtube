@@ -29,13 +29,6 @@
 
 ### 1. 安裝 Python 依賴
 ```bash
-# 方法一：使用批次檔
-install_dependencies.bat
-
-# 方法二：使用 Python 腳本
-python install_dependencies.py
-
-# 方法三：手動安裝
 pip install websockets pywin32
 ```
 
