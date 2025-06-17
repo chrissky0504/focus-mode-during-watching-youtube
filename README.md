@@ -20,6 +20,13 @@ This is a system that helps users focus on watching YouTube videos, combining an
 - `super_fix_topmost.py` - Emergency repair tool
 - `test_second_start.py` - Test tool for multiple starts
 
+### System Requirements
+- Windows 10/11
+- Python 3.7+
+- Microsoft Edge browser
+- Internet connection (for dependency installation)
+
+
 ## Quick Installation
 
 ### 1. Download Installation Package
@@ -40,11 +47,6 @@ pip install websockets pywin32
 4. Click "Load unpacked"
 5. Select the `focus` folder of this project
 
-### System Requirements
-- Windows 10/11
-- Python 3.7+
-- Microsoft Edge browser
-- Internet connection (for dependency installation)
 
 ## How to Use
 
