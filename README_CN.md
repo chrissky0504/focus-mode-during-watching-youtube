@@ -3,8 +3,8 @@
 這是一個協助用戶專注觀看 YouTube 影片的系統，結合 Edge 瀏覽器擴充套件與本地 Python 程式。
 
 ## Language / 語言
-- [中文版 README](README.md) (目前)
-- [English README](README_EN.md)
+- [中文版 README](README_CN.md) (目前)
+- [English README](README.md)
 
 ## 系統組成
 

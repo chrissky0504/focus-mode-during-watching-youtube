@@ -1,6 +1,6 @@
 ## Language / 語言
-- [中文版 README](README.md)
-- [English README](README_EN.md) (Current)
+- [中文版 README](README_CN.md)
+- [English README](README.md) (Current)
 
 # YouTube Focus Mode Edge Extension
 
