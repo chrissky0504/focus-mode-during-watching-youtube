@@ -1,3 +1,7 @@
+## Language / 語言
+- [中文版 README](README.md)
+- [English README](README_EN.md) (Current)
+
 # YouTube Focus Mode Edge Extension
 
 This is a system that helps users focus on watching YouTube videos, combining an Edge browser extension with a local Python program.
@@ -179,6 +183,3 @@ Extension and Python program communicate via WebSocket (localhost:8080):
 
 🎯 **Focus Mode helps you fully immerse in YouTube learning!**
 
-## Language / 語言
-- [中文版 README](README.md)
-- [English README](README_EN.md) (Current)
