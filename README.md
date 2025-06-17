@@ -46,8 +46,6 @@ pip install websockets pywin32
 # 啟動主程式 (推薦)
 python screen_blocker_final_fixed.py
 
-# 或啟動簡化版伺服器
-python focus_server_v2.py
 ```
 
 ### 2. 使用專注模式
