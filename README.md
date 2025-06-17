@@ -40,6 +40,12 @@ pip install websockets pywin32
 4. Click "Load unpacked"
 5. Select the `focus` folder of this project
 
+### System Requirements
+- Windows 10/11
+- Python 3.7+
+- Microsoft Edge browser
+- Internet connection (for dependency installation)
+
 ## How to Use
 
 ### 1. Start Backend Program
@@ -116,11 +122,7 @@ screen_blocker_final_fixed.py overlay settings:
    - This has been fixed in the latest version
    - Use `screen_blocker_final_fixed.py`
 
-### System Requirements
-- Windows 10/11
-- Python 3.7+
-- Microsoft Edge browser
-- Internet connection (for dependency installation)
+
 
 ## Development Information
 

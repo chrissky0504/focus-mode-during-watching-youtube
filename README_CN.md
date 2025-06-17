@@ -20,6 +20,12 @@
 - `super_fix_topmost.py` - 緊急修復工具
 - `test_second_start.py` - 第二次啟動測試工具
 
+### 系統需求
+- Windows 10/11
+- Python 3.7+
+- Microsoft Edge 瀏覽器
+- 網路連線（安裝依賴時）
+
 ## 快速安裝
 
 ### 1. 下載安裝包
@@ -117,11 +123,6 @@ screen_blocker_final_fixed.py 的覆蓋設定：
    - 此問題已在最新版本中修復
    - 請使用 `screen_blocker_final_fixed.py`
 
-### 系統需求
-- Windows 10/11
-- Python 3.7+
-- Microsoft Edge 瀏覽器
-- 網路連線（安裝依賴時）
 
 ## 開發資訊
 
