@@ -2,14 +2,6 @@
 
 這是一個協助用戶專注觀看 YouTube 影片的系統，結合 Edge 瀏覽器擴充套件與本地 Python 程式。
 
-## 🆕 v3 新功能
-
-- ✅ **Edge 視窗自動置頂**：專注模式時自動將 Edge 視窗設為完全置頂
-- ✅ **智慧視窗管理**：自動尋找所有 Edge 瀏覽器視窗
-- ✅ **自動取消置頂**：專注模式結束時自動恢復正常視窗層級
-- ✅ **加寬右側覆蓋**：右側覆蓋層擴增至 550px，更有效防止誤觸
-- ✅ **全螢幕相容**：修正全螢幕模式下的點擊穿透問題
-
 ## 系統組成
 
 ### Edge 擴充套件
@@ -27,12 +19,18 @@
 
 ## 快速安裝
 
-### 1. 安裝 Python 依賴
+### 1. 下載安裝包
+```bash
+git clone https://github.com/chrissky0504/focus-mode-during-watching-youtube.git
+cd focus-mode-during-watching-youtube
+```
+
+### 2. 安裝 Python 依賴
 ```bash
 pip install websockets pywin32
 ```
 
-### 2. 安裝 Edge 擴充套件
+### 3. 安裝 Edge 擴充套件
 1. 開啟 Edge 瀏覽器
 2. 前往 `edge://extensions/`
 3. 開啟「開發人員模式」
@@ -43,7 +41,7 @@ pip install websockets pywin32
 
 ### 1. 啟動後端程式
 ```bash
-# 啟動主程式 (推薦)
+# 啟動主程式
 python screen_blocker_final_fixed.py
 
 ```
@@ -60,7 +58,7 @@ python screen_blocker_final_fixed.py
 ### 3. 結束專注模式
 專注模式會在以下情況自動結束：
 - ✅ YouTube 影片播放完畢
-- ✅ 手動點擊「解除專注模式」按鈕
+
 
 系統會自動：
 - 📌 取消 Edge 視窗置頂
