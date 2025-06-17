@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Focus Mode",
+  "version": "1.0.0",
+  "description": "專注模式擴充套件 - 在YouTube影片播放完畢前保持專注",  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "notifications",
+    "scripting",
+    "windows"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],  "action": {
+    "default_popup": "popup.html",
+    "default_title": "YouTube Focus Mode"
+  }
+}

@@ -1,0 +1,84 @@
+/* Styles for YouTube Focus Mode */
+
+.focus-mode-btn {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  transition: all 0.3s ease !important;
+}
+
+.focus-mode-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4) !important;
+}
+
+#focus-mode-overlay {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#focus-mode-overlay .focus-info {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#focus-mode-overlay h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#focus-mode-overlay p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.focus-progress-bar {
+  background: rgba(255,255,255,0.3);
+  height: 6px;
+  border-radius: 3px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+#focus-progress-indicator {
+  background: #00ff00;
+  height: 100%;
+  width: 0%;
+  transition: width 1s ease;
+  border-radius: 3px;
+}
+
+.focus-note {
+  font-size: 12px !important;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* Ensure button stays visible on different YouTube layouts */
+#youtube-focus-btn {
+  position: fixed !important;
+  top: 70px !important;
+  right: 20px !important;
+}
