@@ -1,189 +1,184 @@
-# YouTube 專注模式 Edge 擴充套件
+# YouTube Focus Mode Edge Extension
 
-這是一個協助用戶專注觀看 YouTube 影片的系統，結合 Edge 瀏覽器擴充套件與本地 Python 程式。
+This is a system that helps users focus on watching YouTube videos, combining an Edge browser extension with a local Python program.
 
-## Language / 語言
-- [中文版 README](README.md) (目前)
-- [English README](README_EN.md)
+## System Components
 
-## 系統組成
+### Edge Extension
+- `manifest.json` - Extension configuration
+- `content.js` - YouTube page script
+- `background.js` - Background service
+- `popup.html/js` - Popup interface
+- `options.html/js` - Settings page
 
-### Edge 擴充套件
-- `manifest.json` - 擴充套件設定
-- `content.js` - YouTube 頁面腳本
-- `background.js` - 背景服務
-- `popup.html/js` - 彈出視窗介面
-- `options.html/js` - 設定頁面
+### Python Backend
+- `screen_blocker_final_fixed.py` - **Main Program** (Latest version with complete fixes)
+- `super_fix_topmost.py` - Emergency repair tool
+- `test_second_start.py` - Test tool for multiple starts
 
-### Python 後端
-- `screen_blocker_final_fixed.py` - **主程式** (最新修復版，解決所有已知問題)
-- `super_fix_topmost.py` - 緊急修復工具
-- `test_second_start.py` - 第二次啟動測試工具
+## Quick Installation
 
-## 快速安裝
-
-### 1. 下載安裝包
+### 1. Download Installation Package
 ```bash
 git clone https://github.com/chrissky0504/focus-mode-during-watching-youtube.git
 cd focus-mode-during-watching-youtube
 ```
 
-### 2. 安裝 Python 依賴
+### 2. Install Python Dependencies
 ```bash
 pip install websockets pywin32
 ```
 
-### 3. 安裝 Edge 擴充套件
-1. 開啟 Edge 瀏覽器
-2. 前往 `edge://extensions/`
-3. 開啟「開發人員模式」
-4. 點擊「載入解壓縮」
-5. 選擇此專案的 `focus` 資料夾
+### 3. Install Edge Extension
+1. Open Edge browser
+2. Go to `edge://extensions/`
+3. Enable "Developer mode"
+4. Click "Load unpacked"
+5. Select the `focus` folder of this project
 
-## 使用方式
+## How to Use
 
-### 1. 啟動後端程式
+### 1. Start Backend Program
 ```bash
-# 啟動主程式
+# Start main program
 python screen_blocker_final_fixed.py
 
-# 或使用啟動器
+# Or use the launcher
 start_final_fixed.bat
 ```
 
-### 2. 使用專注模式
-1. 開啟 YouTube 影片
-2. 點擊 Edge 工具列上的專注模式圖示
-3. 點擊「開始專注模式」按鈕
-4. 系統將自動：
-   - 🔒 建立螢幕邊緣覆蓋層
-   - 📌 將 Edge 視窗設為完全置頂
-   - 🚫 阻止所有點擊切換視窗的行為
+### 2. Use Focus Mode
+1. Open a YouTube video
+2. Click the Focus Mode icon in Edge toolbar
+3. Click "Start Focus Mode" button
+4. The system will automatically:
+   - 🔒 Create screen edge overlay layers
+   - 📌 Set Edge window to always on top
+   - 🚫 Block all click behaviors that switch windows
 
-### 3. 結束專注模式
-專注模式會在以下情況自動結束：
-- ✅ YouTube 影片播放完畢
+### 3. End Focus Mode
+Focus mode will automatically end in the following situations:
+- ✅ YouTube video playback completes
 
+The system will automatically:
+- 📌 Cancel Edge window topmost status
+- 🔓 Remove screen overlay layers
+- 💬 Display end notification
 
-系統會自動：
-- 📌 取消 Edge 視窗置頂
-- 🔓 移除螢幕覆蓋層
-- 💬 顯示結束提示
+## Test Tools
 
-## 測試工具
-
-### 第二次啟動測試
+### Multiple Start Test
 ```bash
 python test_second_start.py
 ```
-此工具會：
-1. 測試多次專注模式啟動/關閉
-2. 驗證覆蓋層能否正常重新創建
-3. 提供手動控制測試
+This tool will:
+1. Test multiple focus mode starts/stops
+2. Verify overlay layers can be recreated properly
+3. Provide manual control testing
 
-### 緊急修復工具
-如果視窗卡在置頂狀態：
+### Emergency Repair Tool
+If windows get stuck in topmost state:
 ```bash
-python super_fix_topmost.py    # 移除所有置頂視窗
+python super_fix_topmost.py    # Remove all topmost windows
 ```
 
-## 覆蓋區域配置
+## Overlay Area Configuration
 
-screen_blocker_final_fixed.py 的覆蓋設定：
-- **頂部**：60px 高度，阻止點擊其他視窗標題列
-- **底部**：60px 高度，阻止點擊工作列
-- **左側**：60px 寬度，阻止左側操作
-- **右側**：600px 寬度，有效阻止視窗切換手勢
+screen_blocker_final_fixed.py overlay settings:
+- **Top**: 60px height, blocks clicking other window title bars
+- **Bottom**: 60px height, blocks clicking taskbar
+- **Left**: 60px width, blocks left-side operations
+- **Right**: 600px width, effectively blocks window switching gestures
 
-## 故障排除
+## Troubleshooting
 
-### 常見問題
+### Common Issues
 
-1. **找不到 Edge 視窗**
-   - 確保 Edge 瀏覽器已開啟
-   - 確保有開啟 YouTube 或任何網頁
-   - 檢查是否使用正確的 Edge 版本（非 IE 模式）
+1. **Cannot find Edge windows**
+   - Ensure Edge browser is open
+   - Ensure YouTube or any webpage is open
+   - Check if using correct Edge version (not IE mode)
 
-2. **視窗無法置頂**
-   - 以系統管理員身分執行 Python 程式
-   - 檢查是否有其他軟體衝突
+2. **Windows cannot be set to topmost**
+   - Run Python program as administrator
+   - Check for conflicts with other software
 
-3. **依賴安裝失敗**
-   - 確保 Python 版本 3.7+
-   - 嘗試升級 pip：`python -m pip install --upgrade pip`
-   - 手動安裝：`pip install websockets pywin32`
+3. **Dependency installation failed**
+   - Ensure Python version 3.7+
+   - Try upgrading pip: `python -m pip install --upgrade pip`
+   - Manual installation: `pip install websockets pywin32`
 
-4. **第二次啟動失敗**
-   - 此問題已在最新版本中修復
-   - 請使用 `screen_blocker_final_fixed.py`
+4. **Second start fails**
+   - This has been fixed in the latest version
+   - Use `screen_blocker_final_fixed.py`
 
-### 系統需求
+### System Requirements
 - Windows 10/11
 - Python 3.7+
-- Microsoft Edge 瀏覽器
-- 網路連線（安裝依賴時）
+- Microsoft Edge browser
+- Internet connection (for dependency installation)
 
-## 開發資訊
+## Development Information
 
-### 檔案結構
+### File Structure
 ```
 focus/
-├── manifest.json                    # 擴充套件設定
-├── content.js                       # YouTube 頁面腳本
-├── background.js                    # 背景服務
-├── popup.html/js                    # 彈出視窗
-├── options.html/js                  # 設定頁面
-├── styles.css                       # 樣式表
-├── screen_blocker_final_fixed.py    # 主程式 ⭐
-├── super_fix_topmost.py             # 緊急修復工具
-├── test_second_start.py             # 測試工具
-└── start_final_fixed.bat            # 啟動器
+├── manifest.json                    # Extension configuration
+├── content.js                       # YouTube page script
+├── background.js                    # Background service
+├── popup.html/js                    # Popup window
+├── options.html/js                  # Settings page
+├── styles.css                       # Stylesheet
+├── screen_blocker_final_fixed.py    # Main program ⭐
+├── super_fix_topmost.py             # Emergency repair tool
+├── test_second_start.py             # Test tool
+└── start_final_fixed.bat            # Launcher
 ```
 
-### 通訊協定
-擴充套件與 Python 程式透過 WebSocket (localhost:8080) 通訊：
+### Communication Protocol
+Extension and Python program communicate via WebSocket (localhost:8080):
 
 ```json
 {
-  "action": "lock",        // 啟動專注模式
-  "action": "unlock",      // 解除專注模式  
-  "action": "progress",    // 影片進度更新
-  "progress": 75.5         // 進度百分比
+  "action": "lock",        // Start focus mode
+  "action": "unlock",      // End focus mode  
+  "action": "progress",    // Video progress update
+  "progress": 75.5         // Progress percentage
 }
 ```
 
-## 更新日誌
+## Update Log
 
-### Final Fixed Version (最新)
-- 🆕 完全修復第二次啟動問題
-- 🆕 強化狀態重置機制
-- 🆕 改進視窗創建，正確的父子關係
-- 🆕 線程安全的監控系統
-- 🔧 修復影片播放完畢後覆蓋層不消失問題
-- 🔧 修復全螢幕模式下覆蓋層消失問題
-- 🔧 增強錯誤處理和用戶回饋
+### Final Fixed Version (Latest)
+- 🆕 Complete fix for second start issues
+- 🆕 Enhanced state reset mechanism
+- 🆕 Improved window creation with proper parent-child relationships
+- 🆕 Thread-safe monitoring system
+- 🔧 Fixed overlay layers not disappearing after video ends
+- 🔧 Fixed overlay layers disappearing in fullscreen mode
+- 🔧 Enhanced error handling and user feedback
 
 ### v3.0
-- 🆕 加入 Edge 視窗自動置頂/取消置頂功能
-- 🆕 智慧尋找所有 Edge 瀏覽器視窗
-- 🆕 右側覆蓋層加寬至 550px
-- 🔧 修正全螢幕模式點擊穿透問題
-- 🔧 改善錯誤處理和用戶提示
+- 🆕 Added Edge window auto topmost/cancel topmost functionality
+- 🆕 Smart detection of all Edge browser windows
+- 🆕 Right overlay layer widened to 550px
+- 🔧 Fixed fullscreen mode click-through issues
+- 🔧 Improved error handling and user notifications
 
 ### v2.0
-- 加入螢幕邊緣覆蓋功能
-- 修正各種視窗管理問題
-- 改善 WebSocket 通訊穩定性
+- Added screen edge overlay functionality
+- Fixed various window management issues
+- Improved WebSocket communication stability
 
 ### v1.0
-- 基本專注模式功能
-- Edge 擴充套件開發
-- YouTube 影片進度偵測
+- Basic focus mode functionality
+- Edge extension development
+- YouTube video progress detection
 
 ---
 
-🎯 **專注模式讓您全心投入 YouTube 學習！**
+🎯 **Focus Mode helps you fully immerse in YouTube learning!**
 
 ## Language / 語言
-- [中文版 README](README.md) (目前)
-- [English README](README_EN.md)
+- [中文版 README](README.md)
+- [English README](README_EN.md) (Current)
